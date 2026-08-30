@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aetherforge-config
+  namespace: aetherforge
+data:
+  APP_ENV: "production"
+  JIRA_PROJECT_KEY: "AF"
+  LOG_LEVEL: "INFO"

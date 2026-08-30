@@ -1,0 +1,35 @@
+[project]
+name = "aetherforge"
+version = "1.0.0"
+description = "AetherForge — industrial knowledge OS with hybrid RAG, agentic workflows, Jira, and Kubernetes CI/CD"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.115.6",
+  "uvicorn[standard]==0.32.1",
+  "sqlalchemy==2.0.36",
+  "pydantic==2.10.3",
+  "pydantic-settings==2.6.1",
+  "prometheus-client==0.21.1",
+  "httpx==0.28.1",
+  "jinja2==3.1.4",
+  "python-multipart==0.0.17",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.4", "ruff==0.8.3"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"

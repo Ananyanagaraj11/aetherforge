@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AetherForge · Knowledge OS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="nav">
+      <div class="brand">
+        <div class="mark">Æ</div>
+        <div>
+          <h1>AETHERFORGE</h1>
+          <p>Knowledge OS</p>
+        </div>
+      </div>
+      <button class="active" data-page="command">Command</button>
+      <button data-page="knowledge">Knowledge</button>
+      <button data-page="agents">Agent runs</button>
+      <button data-page="jira">Jira board</button>
+      <button data-page="hitl">HITL queue</button>
+      <button data-page="ops">Jenkins · K8s</button>
+    </aside>
+    <section class="main">
+      <header class="top">
+        <h2 id="pageTitle">Command</h2>
+        <div class="chips" id="chips"></div>
+      </header>
+
+      <div id="command" class="page active">
+        <div class="hero">
+          <h3>Ask the industrial knowledge graph.</h3>
+          <p>Hybrid retrieval (BM25 + vectors + RRF), multi-agent planning, and a human gate before Jira writes or Jenkins promotions. Answers cite source runbooks — the system abstains when evidence is weak.</p>
+          <div class="ask-row">
+            <input id="query" placeholder="e.g. HVAC zone 4 supply temperature is drifting. What is the runbook?" />
+            <button id="askBtn">Run agents</button>
+          </div>
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="kpis" id="kpis"></div>
+        <div class="grid">
+          <div class="card span-8">
+            <h4>Grounded answer</h4>
+            <div id="answer" class="answer empty">Run a query to see retrieval, analysis, and a drafted Jira ticket.</div>
+          </div>
+          <div class="card span-4">
+            <h4>Agent graph</h4>
+            <div id="timeline" class="timeline empty">Retriever → Analyst → Planner → Reviewer</div>
+          </div>
+          <div class="card span-6">
+            <h4>Citations</h4>
+            <div id="cites"></div>
+          </div>
+          <div class="card span-6">
+            <h4>Proposed Jira + Jenkins</h4>
+            <div id="ticket"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="knowledge" class="page">
+        <div class="card">
+          <h4>Indexed runbooks</h4>
+          <table class="table" id="knowledgeTable"></table>
+        </div>
+      </div>
+
+      <div id="agents" class="page">
+        <div class="card">
+          <h4>Recent workflow runs</h4>
+          <table class="table" id="runsTable"></table>
+        </div>
+      </div>
+
+      <div id="jira" class="page">
+        <div class="board" id="board"></div>
+      </div>
+
+      <div id="hitl" class="page">
+        <div class="card">
+          <h4>Human-in-the-loop approvals</h4>
+          <div id="hitlList"></div>
+        </div>
+      </div>
+
+      <div id="ops" class="page">
+        <div class="grid">
+          <div class="card span-6">
+            <h4>Jenkins jobs</h4>
+            <table class="table" id="jenkinsTable"></table>
+          </div>
+          <div class="card span-6">
+            <h4>Runtime</h4>
+            <div id="opsPanel"></div>
+          </div>
+          <div class="card span-12">
+            <h4>Audit log</h4>
+            <table class="table" id="auditTable"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

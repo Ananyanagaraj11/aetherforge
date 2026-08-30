@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aetherforge-db
+  namespace: aetherforge
+type: Opaque
+stringData:
+  DATABASE_URL: postgresql+psycopg://aetherforge:change-me@postgres:5432/aetherforge
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: aetherforge
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16-alpine
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: aetherforge
+            - name: POSTGRES_PASSWORD
+              value: change-me
+            - name: POSTGRES_DB
+              value: aetherforge
+          volumeMounts:
+            - name: pg
+              mountPath: /var/lib/postgresql/data
+  volumeClaimTemplates:
+    - metadata:
+        name: pg
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: aetherforge
+spec:
+  selector:
+    app: postgres
+  ports:
+    - port: 5432

@@ -13,8 +13,8 @@ Not another generic “enterprise dashboard.” AetherForge is the control plane
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-HPA-326CE5?logo=kubernetes&logoColor=white)
 
 <p align="center">
-  <a href="https://aetherforge.onrender.com"><strong>Live demo</strong></a> ·
-  <a href="https://aetherforge.onrender.com/docs"><strong>API docs</strong></a> ·
+  <a href="https://aetherforge-hgfm.onrender.com"><strong>Live demo</strong></a> ·
+  <a href="https://aetherforge-hgfm.onrender.com/docs"><strong>API docs</strong></a> ·
   <a href="docs/ARCHITECTURE.md"><strong>Architecture</strong></a>
 </p>
 
@@ -51,9 +51,9 @@ flowchart LR
 
 | Surface | URL |
 |---------|-----|
-| Console | https://aetherforge.onrender.com |
-| OpenAPI | https://aetherforge.onrender.com/docs |
-| Health | https://aetherforge.onrender.com/health |
+| Console | https://aetherforge-hgfm.onrender.com |
+| OpenAPI | https://aetherforge-hgfm.onrender.com/docs |
+| Health | https://aetherforge-hgfm.onrender.com/health |
 
 Try these prompts on **Command**:
 

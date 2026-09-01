@@ -42,15 +42,7 @@ A company-style control plane for industrial / platform teams — not a chatbot 
 ## 60-second live walkthrough
 
 Open **[the demo](https://aetherforge-hgfm.onrender.com)** (free Render may take ~40s on first wake).
-
-1. **Command** → click *How do we roll back a failed Kubernetes production release?*
-2. Watch **Retriever → Analyst → Planner → Reviewer**.
-3. Read the **grounded answer** + citation scores (BM25 / vector / fused).
-4. Click **Approve → Jira + Jenkins**.
-5. Open **Jira board** — new `AF-*` ticket in To Do.
-6. Open **Jenkins · K8s** — job queued, namespace / HPA / Postgres shown.
-
-Other prompts that show different runbooks:
+prompts that show different runbooks:
 
 - HVAC zone 4 SAT drift → facilities incident + HITL  
 - PostgreSQL replica lag → Sev-2 escalation + DB verify job  

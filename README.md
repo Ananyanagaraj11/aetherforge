@@ -151,14 +151,6 @@ tests/                          RAG + API + HITL → Jira
 
 ---
 
-## Interview script (say this)
-
-> AetherForge is a knowledge OS I built to show production AI plus platform engineering. An operator asks a question. Hybrid retrieval pulls the runbook — the analyst is not allowed to answer without citations. A planner drafts a Jira issue and selects the Jenkins job. A reviewer blocks every write until a human approves. State lives in PostgreSQL. The same repo has Kubernetes manifests and a Jenkins promotion pipeline with a HITL prod gate.
-
-Then pause: *Want the RAG design, the agent graph, or the Jira / Jenkins path?*
-
----
-
 ## Author
 
 **Ananya Naga Raj** — AI / Backend Engineer  

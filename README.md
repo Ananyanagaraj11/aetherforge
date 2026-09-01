@@ -21,11 +21,10 @@ A company-style control plane for industrial / platform teams — not a chatbot 
 
 ---
 
-## Highlights (read this first)
+## Highlights
 
-If you only skim one section, this is it.
 
-| # | What a recruiter should notice | Where it lives |
+| # | About | Where it lives |
 |---|--------------------------------|----------------|
 | 1 | **Hybrid RAG that cites or abstains** — BM25 + TF-IDF vectors + Reciprocal Rank Fusion + rerank. No source chunk → no invented procedure. | `src/aetherforge/rag/` |
 | 2 | **4-agent graph** — Retriever → Analyst → Planner → Reviewer. Same shape as production LangGraph / HITL systems. | `src/aetherforge/agents/orchestrator.py` |
